@@ -44,12 +44,11 @@ export default function App() {
       const response = await openPicker({
         selectedAssets: images,
         isExportThumbnail: true,
-        maxVideo: 1,
         doneTitle: "Xong",
         singleSelectedMode,
-        isCrop: true,
         usedCameraButton: false,
       });
+      console.log("🚀 ~ onPicker ~ response:", response);
 
       const crop = response.crop;
 

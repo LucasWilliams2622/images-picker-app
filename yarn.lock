@@ -1182,13 +1182,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@baronha/react-native-multiple-image-picker@npm:^1.1.9":
-  version: 1.1.9
-  resolution: "@baronha/react-native-multiple-image-picker@npm:1.1.9"
+"@baronha/react-native-multiple-image-picker@npm:1.1.7":
+  version: 1.1.7
+  resolution: "@baronha/react-native-multiple-image-picker@npm:1.1.7"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 309d0842967673a97687f34107dce627e91a200c69e898970a854f3c76ced273f4835ac69d82e3e84f5a8fcbe6c8d9ae0c25bf0bd3fccf42da2b3c54aef08d3d
+  checksum: 418bcf31ac80a4c31bce9655af4ca96c7b1a67620d0c992c19129e3aa98843ce6767b3f6ee559bce76d8f4741aea2db9ec8b1d36f3c507f287dbf3058a327cb0
   languageName: node
   linkType: hard
 
@@ -5405,7 +5405,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.25.2
     "@baronha/react-native-image-grid": ^0.2.7
-    "@baronha/react-native-multiple-image-picker": ^1.1.9
+    "@baronha/react-native-multiple-image-picker": 1.1.7
     "@expo/vector-icons": ^14.0.2
     "@react-navigation/bottom-tabs": ^7.0.0
     "@react-navigation/native": ^7.0.0

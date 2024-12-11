@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@baronha/react-native-image-grid": "^0.2.7",
-    "@baronha/react-native-multiple-image-picker": "^1.1.9",
+    "@baronha/react-native-multiple-image-picker": "1.1.7",
     "@expo/vector-icons": "^14.0.2",
     "@react-navigation/bottom-tabs": "^7.0.0",
     "@react-navigation/native": "^7.0.0",
