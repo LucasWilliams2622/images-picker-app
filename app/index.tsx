@@ -1,6 +1,15 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useState } from "react";
-import { LayoutAnimation, Platform, Text, UIManager } from "react-native";
+import {
+  FlatList,
+  Image,
+  LayoutAnimation,
+  Modal,
+  Platform,
+  Text,
+  TouchableWithoutFeedback,
+  UIManager,
+} from "react-native";
 import { TouchableOpacity } from "react-native";
 import { ScrollView } from "react-native";
 import { View } from "react-native";
@@ -32,6 +41,8 @@ const { width } = Dimensions.get("window");
 
 export default function App() {
   const [images, setImages] = useState([]);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
 
   const onPressImage = (item, index) => {
     console.log(item, index);
@@ -91,9 +102,54 @@ export default function App() {
             showDelete
             onDeleteImage={onRemovePhoto}
           />
+
           <TouchableOpacity style={style.buttonOpen} onPress={onPicker}>
             <Text style={style.textOpen}>Open Picker</Text>
           </TouchableOpacity>
+
+          <FlatList
+            data={images}
+            renderItem={({ item, index }) => (
+              <TouchableOpacity
+                onPress={() => {
+                  setSelectedImage(item.path);
+                  setModalVisible(true);
+                }}
+              >
+                <Image
+                  source={{ uri: item.path }}
+                  style={{ width: 150, height: 150, margin: 5 }}
+                />
+              </TouchableOpacity>
+            )}
+            keyExtractor={(item, index) => index.toString()}
+            horizontal
+          />
+          <Modal
+            visible={modalVisible}
+            transparent={true}
+            animationType="slide"
+          >
+            <View
+              style={{
+                flex: 1,
+                backgroundColor: "black",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
+                <Image
+                  source={{ uri: selectedImage }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    resizeMode: "contain",
+                  }}
+                />
+              </TouchableWithoutFeedback>
+            </View>
+          </Modal>
         </View>
       </ScrollView>
       <View style={style.header}>
